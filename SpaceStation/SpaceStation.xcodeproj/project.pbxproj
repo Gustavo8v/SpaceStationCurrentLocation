@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		7240BF3B282CA79D006BCCE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240BF3A282CA79D006BCCE2 /* AppDelegate.swift */; };
 		7240BF3D282CA79D006BCCE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240BF3C282CA79D006BCCE2 /* SceneDelegate.swift */; };
-		7240BF3F282CA79D006BCCE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240BF3E282CA79D006BCCE2 /* ViewController.swift */; };
-		7240BF42282CA79D006BCCE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7240BF40282CA79D006BCCE2 /* Main.storyboard */; };
 		7240BF44282CA79E006BCCE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7240BF43282CA79E006BCCE2 /* Assets.xcassets */; };
 		7240BF47282CA79E006BCCE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7240BF45282CA79E006BCCE2 /* LaunchScreen.storyboard */; };
+		7240BF56282CA844006BCCE2 /* StationLocationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240BF4F282CA844006BCCE2 /* StationLocationPresenter.swift */; };
+		7240BF57282CA844006BCCE2 /* StationLocationLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240BF50282CA844006BCCE2 /* StationLocationLocalDataManager.swift */; };
+		7240BF58282CA844006BCCE2 /* StationLocationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240BF51282CA844006BCCE2 /* StationLocationProtocols.swift */; };
+		7240BF59282CA844006BCCE2 /* StationLocationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240BF52282CA844006BCCE2 /* StationLocationInteractor.swift */; };
+		7240BF5A282CA844006BCCE2 /* StationLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240BF53282CA844006BCCE2 /* StationLocationView.swift */; };
+		7240BF5B282CA844006BCCE2 /* StationLocationRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240BF54282CA844006BCCE2 /* StationLocationRemoteDataManager.swift */; };
+		7240BF5C282CA844006BCCE2 /* StationLocationWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240BF55282CA844006BCCE2 /* StationLocationWireFrame.swift */; };
+		725747A3282CB5B7008901F1 /* MapKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725747A2282CB5B6008901F1 /* MapKitExtension.swift */; };
+		725747A5282CB863008901F1 /* StationLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725747A4282CB863008901F1 /* StationLocationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7240BF37282CA79D006BCCE2 /* SpaceStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7240BF3A282CA79D006BCCE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7240BF3C282CA79D006BCCE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7240BF3E282CA79D006BCCE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7240BF41282CA79D006BCCE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7240BF43282CA79E006BCCE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7240BF46282CA79E006BCCE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7240BF48282CA79E006BCCE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7240BF4F282CA844006BCCE2 /* StationLocationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLocationPresenter.swift; sourceTree = "<group>"; };
+		7240BF50282CA844006BCCE2 /* StationLocationLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLocationLocalDataManager.swift; sourceTree = "<group>"; };
+		7240BF51282CA844006BCCE2 /* StationLocationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLocationProtocols.swift; sourceTree = "<group>"; };
+		7240BF52282CA844006BCCE2 /* StationLocationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLocationInteractor.swift; sourceTree = "<group>"; };
+		7240BF53282CA844006BCCE2 /* StationLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLocationView.swift; sourceTree = "<group>"; };
+		7240BF54282CA844006BCCE2 /* StationLocationRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLocationRemoteDataManager.swift; sourceTree = "<group>"; };
+		7240BF55282CA844006BCCE2 /* StationLocationWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLocationWireFrame.swift; sourceTree = "<group>"; };
+		725747A2282CB5B6008901F1 /* MapKitExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitExtension.swift; sourceTree = "<group>"; };
+		725747A4282CB863008901F1 /* StationLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLocationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,46 @@
 		7240BF39282CA79D006BCCE2 /* SpaceStation */ = {
 			isa = PBXGroup;
 			children = (
+				725747A0282CB5A0008901F1 /* Commons */,
+				7240BF5D282CA848006BCCE2 /* StattionLocation */,
 				7240BF3A282CA79D006BCCE2 /* AppDelegate.swift */,
 				7240BF3C282CA79D006BCCE2 /* SceneDelegate.swift */,
-				7240BF3E282CA79D006BCCE2 /* ViewController.swift */,
-				7240BF40282CA79D006BCCE2 /* Main.storyboard */,
 				7240BF43282CA79E006BCCE2 /* Assets.xcassets */,
 				7240BF45282CA79E006BCCE2 /* LaunchScreen.storyboard */,
 				7240BF48282CA79E006BCCE2 /* Info.plist */,
 			);
 			path = SpaceStation;
+			sourceTree = "<group>";
+		};
+		7240BF5D282CA848006BCCE2 /* StattionLocation */ = {
+			isa = PBXGroup;
+			children = (
+				7240BF53282CA844006BCCE2 /* StationLocationView.swift */,
+				7240BF4F282CA844006BCCE2 /* StationLocationPresenter.swift */,
+				7240BF50282CA844006BCCE2 /* StationLocationLocalDataManager.swift */,
+				7240BF51282CA844006BCCE2 /* StationLocationProtocols.swift */,
+				7240BF52282CA844006BCCE2 /* StationLocationInteractor.swift */,
+				7240BF54282CA844006BCCE2 /* StationLocationRemoteDataManager.swift */,
+				7240BF55282CA844006BCCE2 /* StationLocationWireFrame.swift */,
+				725747A4282CB863008901F1 /* StationLocationModel.swift */,
+			);
+			path = StattionLocation;
+			sourceTree = "<group>";
+		};
+		725747A0282CB5A0008901F1 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				725747A1282CB5A6008901F1 /* Extensions */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		725747A1282CB5A6008901F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				725747A2282CB5B6008901F1 /* MapKitExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +172,6 @@
 			files = (
 				7240BF47282CA79E006BCCE2 /* LaunchScreen.storyboard in Resources */,
 				7240BF44282CA79E006BCCE2 /* Assets.xcassets in Resources */,
-				7240BF42282CA79D006BCCE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +182,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7240BF3F282CA79D006BCCE2 /* ViewController.swift in Sources */,
+				7240BF57282CA844006BCCE2 /* StationLocationLocalDataManager.swift in Sources */,
+				7240BF59282CA844006BCCE2 /* StationLocationInteractor.swift in Sources */,
+				7240BF5B282CA844006BCCE2 /* StationLocationRemoteDataManager.swift in Sources */,
+				725747A5282CB863008901F1 /* StationLocationModel.swift in Sources */,
+				7240BF5A282CA844006BCCE2 /* StationLocationView.swift in Sources */,
+				7240BF56282CA844006BCCE2 /* StationLocationPresenter.swift in Sources */,
+				725747A3282CB5B7008901F1 /* MapKitExtension.swift in Sources */,
+				7240BF5C282CA844006BCCE2 /* StationLocationWireFrame.swift in Sources */,
+				7240BF58282CA844006BCCE2 /* StationLocationProtocols.swift in Sources */,
 				7240BF3B282CA79D006BCCE2 /* AppDelegate.swift in Sources */,
 				7240BF3D282CA79D006BCCE2 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +199,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7240BF40282CA79D006BCCE2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7240BF41282CA79D006BCCE2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7240BF45282CA79E006BCCE2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +338,6 @@
 				INFOPLIST_FILE = SpaceStation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +365,6 @@
 				INFOPLIST_FILE = SpaceStation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
