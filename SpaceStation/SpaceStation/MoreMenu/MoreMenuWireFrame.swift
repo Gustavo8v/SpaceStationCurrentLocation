@@ -19,4 +19,9 @@ class MoreMenuWireFrame: MoreMenuWireFrameProtocol {
         presenter.wireFrame = self
         presenter.view = self.view
     }
+    
+    func goToListLocationView() {
+        let vc = ListLocationWireFrame().view
+        view.present(vc, animated: true)
+    }
 }

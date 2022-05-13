@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct LocationDTOResponse: Codable {
     var message: String?
@@ -22,4 +23,10 @@ struct Position: Codable {
     var longitude: String?
 }
 
- 
+class LocationModelRealm: Object {
+    @objc dynamic var location: String = ""
+    @objc dynamic var latitude: String = ""
+    @objc dynamic var longitude: String = ""
+    @objc dynamic var date: String = ""
+    @objc dynamic var isFavourite: Bool = false
+}

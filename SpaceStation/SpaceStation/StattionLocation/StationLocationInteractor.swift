@@ -32,4 +32,12 @@ extension StationLocationInteractor: StationLocationRemoteDataManagerOutputProto
                                   longitude: longitude)
         presenter?.bringCLLocation(location: location)
     }
+    
+    func saveLocation(location: CLLocation) {
+        localDatamanager?.saveLocationInRealm(location: location)
+    }
+    
+    func deleteAllLocations() {
+        localDatamanager?.deleteAllRegisters()
+    }
 }

@@ -25,6 +25,9 @@ class LocationTableViewCell: UITableViewCell {
     }
     
     func configureUI(){
+        markFavourite.image = UIImage(systemName: "heart.fill")
+        location.textAlignment = .left
+        date.textAlignment = .left
         location.translatesAutoresizingMaskIntoConstraints = false
         date.translatesAutoresizingMaskIntoConstraints = false
         markFavourite.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +41,7 @@ class LocationTableViewCell: UITableViewCell {
             markFavourite.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
             location.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             location.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-            location.trailingAnchor.constraint(equalTo: date.leadingAnchor, constant: -15),
+            location.trailingAnchor.constraint(equalTo: markFavourite.leadingAnchor, constant: -15),
             date.leadingAnchor.constraint(equalTo: location.leadingAnchor),
             date.topAnchor.constraint(equalTo: location.bottomAnchor, constant: 15),
             date.trailingAnchor.constraint(equalTo: markFavourite.trailingAnchor),
@@ -46,7 +49,9 @@ class LocationTableViewCell: UITableViewCell {
         ])
     }
     
-    func configureCell(){
-        
+    func configureCell(data: LocationModelRealm){
+        location.text = data.location
+        date.text = data.date
+        markFavourite.tintColor = data.isFavourite ? .red : .gray
     }
 }

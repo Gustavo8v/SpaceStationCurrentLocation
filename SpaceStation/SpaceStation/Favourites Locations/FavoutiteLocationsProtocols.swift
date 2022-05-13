@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-protocol FavoutiteLocationsViewProtocol: class {
+protocol FavoutiteLocationsViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: FavoutiteLocationsPresenterProtocol? { get set }
 }
 
-protocol FavoutiteLocationsWireFrameProtocol: class {
+protocol FavoutiteLocationsWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createFavoutiteLocationsModule() -> UIViewController
 }
 
-protocol FavoutiteLocationsPresenterProtocol: class {
+protocol FavoutiteLocationsPresenterProtocol: AnyObject {
     // VIEW -> PRESENTER
     var view: FavoutiteLocationsViewProtocol? { get set }
     var interactor: FavoutiteLocationsInteractorInputProtocol? { get set }
@@ -28,30 +28,30 @@ protocol FavoutiteLocationsPresenterProtocol: class {
     func viewDidLoad()
 }
 
-protocol FavoutiteLocationsInteractorOutputProtocol: class {
+protocol FavoutiteLocationsInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
 }
 
-protocol FavoutiteLocationsInteractorInputProtocol: class {
+protocol FavoutiteLocationsInteractorInputProtocol: AnyObject {
     // PRESENTER -> INTERACTOR
     var presenter: FavoutiteLocationsInteractorOutputProtocol? { get set }
     var localDatamanager: FavoutiteLocationsLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: FavoutiteLocationsRemoteDataManagerInputProtocol? { get set }
 }
 
-protocol FavoutiteLocationsDataManagerInputProtocol: class {
+protocol FavoutiteLocationsDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> DATAMANAGER
 }
 
-protocol FavoutiteLocationsRemoteDataManagerInputProtocol: class {
+protocol FavoutiteLocationsRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: FavoutiteLocationsRemoteDataManagerOutputProtocol? { get set }
 }
 
-protocol FavoutiteLocationsRemoteDataManagerOutputProtocol: class {
+protocol FavoutiteLocationsRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
 }
 
-protocol FavoutiteLocationsLocalDataManagerInputProtocol: class {
+protocol FavoutiteLocationsLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
 }

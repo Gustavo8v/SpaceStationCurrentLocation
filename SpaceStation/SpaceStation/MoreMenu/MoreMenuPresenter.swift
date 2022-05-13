@@ -13,7 +13,6 @@ class MoreMenuPresenter  {
     // MARK: Properties
     weak var view: MoreMenuViewProtocol?
     var wireFrame: MoreMenuWireFrameProtocol?
-    
 }
 
 extension MoreMenuPresenter: MoreMenuPresenterProtocol {
@@ -30,6 +29,10 @@ extension MoreMenuPresenter: MoreMenuPresenterProtocol {
         optionsArray.append("Ubicaciones favoritas")
         optionsArray.append("Cerrar menú")
         return optionsArray
+    }
+    
+    func goToHistory() {
+        wireFrame?.goToListLocationView()
     }
 }
 

@@ -39,6 +39,7 @@ protocol StationLocationPresenterProtocol: AnyObject {
     func viewDidLoad()
     func getLocationStation()
     func goMoreMenu()
+    func deleteAllRegisters()
 }
 
 protocol StationLocationInteractorOutputProtocol: AnyObject {
@@ -53,6 +54,8 @@ protocol StationLocationInteractorInputProtocol: AnyObject {
     var remoteDatamanager: StationLocationRemoteDataManagerInputProtocol? { get set }
     
     func getLocations()
+    func saveLocation(location: CLLocation)
+    func deleteAllLocations()
 }
 
 protocol StationLocationDataManagerInputProtocol: AnyObject {
@@ -73,4 +76,6 @@ protocol StationLocationRemoteDataManagerOutputProtocol: AnyObject {
 
 protocol StationLocationLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
+    func saveLocationInRealm(location: CLLocation)
+    func deleteAllRegisters()
 }

@@ -20,6 +20,8 @@ protocol MoreMenuWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     var view: MoreMenuView { get set }
     var presenter: MoreMenuPresenter { get set }
+    
+    func goToListLocationView()
 }
 
 protocol MoreMenuPresenterProtocol: AnyObject {
@@ -29,6 +31,7 @@ protocol MoreMenuPresenterProtocol: AnyObject {
     
     func viewDidLoad()
     func prepareOptionsMoreMenu() -> [String]
+    func goToHistory()
 }
 
 protocol MoreMenuInteractorOutputProtocol: AnyObject {

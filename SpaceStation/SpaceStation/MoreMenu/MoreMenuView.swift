@@ -7,6 +7,7 @@
 //
 protocol MoreMenuViewDelegate: AnyObject {
     func updateLocation()
+    func deleteAllRegisters()
 }
 
 import Foundation
@@ -106,9 +107,11 @@ extension MoreMenuView: UITableViewDelegate, UITableViewDataSource {
         guard let switchRows = SectionsTableMenu(rawValue: indexPath.row) else { return }
         switch switchRows {
         case .history:
-            print("history")
+            presenter?.goToHistory()
         case .deleteHistory:
-            print("delete")
+            dismiss(animated: true) {
+                self.delegate?.deleteAllRegisters()
+            }
         case .favourites:
             print("favourires")
         case .updateLocation:

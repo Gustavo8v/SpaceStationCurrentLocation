@@ -63,8 +63,7 @@ extension StationLocationView: StationLocationViewProtocol {
     
     func setLoactionInMap(latitude: Double, longitude: Double, pin: MKPointAnnotation) {
         DispatchQueue.main.async {
-            let allAnnotations = self.map.annotations
-            self.map.removeAnnotations(allAnnotations)
+            self.map.deleteAllPins()
             self.map.centerToLocation(latitude: latitude, longitude: longitude)
             self.map.addAnnotation(pin)
             DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
@@ -99,7 +98,12 @@ extension StationLocationView: MKMapViewDelegate {
 }
 
 extension StationLocationView: MoreMenuViewDelegate {
+    
     func updateLocation() {
         presenter?.getLocationStation()
+    }
+    
+    func deleteAllRegisters() {
+        presenter?.deleteAllRegisters()
     }
 }

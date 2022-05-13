@@ -33,6 +33,7 @@ extension StationLocationPresenter: StationLocationPresenterProtocol {
 extension StationLocationPresenter: StationLocationInteractorOutputProtocol {
     // TODO: implement interactor output methods
     func bringCLLocation(location: CLLocation) {
+        interactor?.saveLocation(location: location)
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
                                                        longitude: location.coordinate.longitude)
@@ -44,5 +45,9 @@ extension StationLocationPresenter: StationLocationInteractorOutputProtocol {
     
     func goMoreMenu() {
         wireFrame?.startMoreMenu()
+    }
+    
+    func deleteAllRegisters() {
+        interactor?.deleteAllLocations()
     }
 }

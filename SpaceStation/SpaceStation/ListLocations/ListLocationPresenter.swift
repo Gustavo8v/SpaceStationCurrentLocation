@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
 
 class ListLocationPresenter  {
-    
     // MARK: Properties
     weak var view: ListLocationViewProtocol?
     var interactor: ListLocationInteractorInputProtocol?
@@ -20,6 +20,12 @@ class ListLocationPresenter  {
 extension ListLocationPresenter: ListLocationPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        view?.configureUI()
+    }
+    
+    func getDataBaseLocations() -> Results<LocationModelRealm> {
+        let locations = try! Realm().objects(LocationModelRealm.self)
+        return locations
     }
 }
 

@@ -17,4 +17,9 @@ extension MKMapView {
             longitudinalMeters: regionRadius)
         setRegion(coordinateRegion, animated: true)
     }
+    
+    func deleteAllPins(){
+        let allAnnotations = self.annotations
+        self.removeAnnotations(allAnnotations)
+    }
 }
