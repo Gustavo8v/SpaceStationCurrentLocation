@@ -25,7 +25,9 @@ protocol StationLocationWireFrameProtocol: AnyObject {
     var presenter: StationLocationPresenter { get set }
     var interactor: StationLocationInteractor { get set }
     var localDatamanager: StationLocationLocalDataManagerInputProtocol { get set }
-    var remoteDatamanager: StationLocationRemoteDataManagerInputProtocol { get set} 
+    var remoteDatamanager: StationLocationRemoteDataManagerInputProtocol { get set}
+    
+    func startMoreMenu()
 }
 
 protocol StationLocationPresenterProtocol: AnyObject {
@@ -36,6 +38,7 @@ protocol StationLocationPresenterProtocol: AnyObject {
     
     func viewDidLoad()
     func getLocationStation()
+    func goMoreMenu()
 }
 
 protocol StationLocationInteractorOutputProtocol: AnyObject {

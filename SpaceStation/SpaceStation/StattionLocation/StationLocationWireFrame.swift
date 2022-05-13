@@ -30,4 +30,11 @@ class StationLocationWireFrame: StationLocationWireFrameProtocol {
         interactor.remoteDatamanager = self.remoteDatamanager
         remoteDatamanager.remoteRequestHandler = self.interactor
     }
+    
+    func startMoreMenu() {
+        let vc = MoreMenuWireFrame().view
+        vc.delegate = view.self
+        vc.modalPresentationStyle = .overFullScreen
+        view.present(vc, animated: true)
+    }
 }

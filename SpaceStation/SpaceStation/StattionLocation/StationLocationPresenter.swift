@@ -41,4 +41,8 @@ extension StationLocationPresenter: StationLocationInteractorOutputProtocol {
                                longitude: location.coordinate.longitude,
                                pin: annotation)
     }
+    
+    func goMoreMenu() {
+        wireFrame?.startMoreMenu()
+    }
 }

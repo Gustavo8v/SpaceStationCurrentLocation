@@ -21,3 +21,5 @@ struct Position: Codable {
     var latitude: String?
     var longitude: String?
 }
+
+ 

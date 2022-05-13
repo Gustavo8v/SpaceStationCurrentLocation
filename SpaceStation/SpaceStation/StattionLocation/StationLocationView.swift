@@ -28,7 +28,7 @@ class StationLocationView: UIViewController {
     }
     
     @objc func showOptionsMaps(){
-        print("❤️")
+        presenter?.goMoreMenu()
     }
 }
 
@@ -37,7 +37,6 @@ extension StationLocationView: StationLocationViewProtocol {
     func configureUI() {
         map.delegate = self
         moreButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        moreButton.setTitle("", for: .normal)
         moreButton.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
         moreButton.backgroundColor = .white
         moreButton.tintColor = .black
@@ -57,7 +56,7 @@ extension StationLocationView: StationLocationViewProtocol {
             //Constrains Button
             moreButton.widthAnchor.constraint(equalToConstant: 40),
             moreButton.heightAnchor.constraint(equalToConstant: 40),
-            moreButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            moreButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             moreButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
         ])
     }
@@ -68,7 +67,7 @@ extension StationLocationView: StationLocationViewProtocol {
             self.map.removeAnnotations(allAnnotations)
             self.map.centerToLocation(latitude: latitude, longitude: longitude)
             self.map.addAnnotation(pin)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
                 self.presenter?.getLocationStation()
             }
         }
@@ -96,5 +95,11 @@ extension StationLocationView: MKMapViewDelegate {
             annotationView.image = UIImage(named: "ISSIcon")
         }
         return annotationView
+    }
+}
+
+extension StationLocationView: MoreMenuViewDelegate {
+    func updateLocation() {
+        presenter?.getLocationStation()
     }
 }
