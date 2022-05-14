@@ -1,0 +1,20 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Tareas Realizadas:\
+-Estudio de la API y extracci\'f3n de elementos para la prueba\
+-Consulta en Postman para verificar la llamada del servicio\
+-Arquitectura Viper para una mejor limpieza de c\'f3digo\
+-Servicios hechos con URLSession para evitar el uso de pods\
+-Uso de Realm como base de datos instalado desde Swift Package Manager\
+-Mapeo de Localizaciones tra\'eddas del servicio \
+-A\'f1adir y eliminar elementos en la base de datos, tanto para guardar ubicaci\'f3n como para a\'f1adir o eliminar de favoritos\
+-Maquetaci\'f3n a c\'f3digo para mejor manejo de constrains\
+\
+Funcionamiento del proyecto\
+\
+La aplicaci\'f3n inicia con una vista en un MKMapView y un pin colocado en la ubicaci\'f3n tra\'edda por el servicio, este pin cambia cada 10 segundos actualizando el mapa, si se da tap en el pin nos muestra la etiqueta \'93Space Station\'94, en la parte superior izquierda encontramos un bot\'f3n que nos lleva a una secci\'f3n de \'93Men\'fa\'94, la cual tienen un bot\'f3n para cerrar y un men\'fa hamburguesa, la primera celda \'93Actualizar ubicaci\'f3n\'94 cierra dicho men\'fa y actualiza la tabla con la ubicaci\'f3n obtenida, la segunda celda, \'93Historial de ubicaciones\'94 nos muestra un View con un mapa en la parte superior y una tabla en la parte inferior, si hacemos tal en cualquier celda nos mostrara con un pin en el mapa la ubicaci\'f3n guardada, si damos tap al bot\'f3n de coraz\'f3n esta ubicaci\'f3n se guardar\'e1 en favoritos y el coraz\'f3n cambiara a rojo indicando que ya est\'e1 guardada, si se vuelve a dar tap esta se eliminar\'e1 de favoritos y el coraz\'f3n vuelve a gris, con el bot\'f3n superior derecho se cierra el View, la tercera secci\'f3n \'93Eliminar historial\'94 borra toda la base de datos y cierra el men\'fa hamburguesa, la cuarta celda \'93Ubicaciones favoritas\'94 muestra una tabla con las ubicaciones favoritas si es que existen, de lo contrario muestra un label indicando que se tienen que agregar ubicaciones, si existen y se le da tap se manda a un View con un mapa el cual coloca un pin en la ubicaci\'f3n seleccionada. Del mismo modo aparece un bot\'f3n en la parte superior izquierda para cerrar dicho View. La ultima celda de la tabla cierra el men\'fa}
