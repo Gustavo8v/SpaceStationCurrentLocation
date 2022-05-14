@@ -28,6 +28,7 @@ protocol StationLocationWireFrameProtocol: AnyObject {
     var remoteDatamanager: StationLocationRemoteDataManagerInputProtocol { get set}
     
     func startMoreMenu()
+    func goFavouritesView()
 }
 
 protocol StationLocationPresenterProtocol: AnyObject {
@@ -40,6 +41,7 @@ protocol StationLocationPresenterProtocol: AnyObject {
     func getLocationStation()
     func goMoreMenu()
     func deleteAllRegisters()
+    func goToFavourites()
 }
 
 protocol StationLocationInteractorOutputProtocol: AnyObject {

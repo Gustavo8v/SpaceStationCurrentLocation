@@ -50,4 +50,8 @@ extension StationLocationPresenter: StationLocationInteractorOutputProtocol {
     func deleteAllRegisters() {
         interactor?.deleteAllLocations()
     }
+    
+    func goToFavourites() {
+        wireFrame?.goFavouritesView()
+    }
 }

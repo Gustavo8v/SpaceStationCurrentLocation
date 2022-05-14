@@ -30,5 +30,6 @@ class ListLocationWireFrame: ListLocationWireFrameProtocol {
         interactor.localDatamanager = self.localDatamanager
         interactor.remoteDatamanager = self.remoteDatamanager
         remoteDatamanager.remoteRequestHandler = self.interactor
+        localDatamanager.interactor = self.interactor
     }
 }

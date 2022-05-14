@@ -15,6 +15,7 @@ protocol ListLocationViewProtocol: AnyObject {
     var presenter: ListLocationPresenterProtocol? { get set }
     
     func configureUI()
+    func reloadTable()
 }
 
 protocol ListLocationWireFrameProtocol: AnyObject {
@@ -34,10 +35,12 @@ protocol ListLocationPresenterProtocol: AnyObject {
     
     func viewDidLoad()
     func getDataBaseLocations() -> Results<LocationModelRealm>
+    func markFavourite(object: LocationModelRealm)
 }
 
 protocol ListLocationInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
+    func reloadTableLocations()
 }
 
 protocol ListLocationInteractorInputProtocol: AnyObject {
@@ -45,6 +48,9 @@ protocol ListLocationInteractorInputProtocol: AnyObject {
     var presenter: ListLocationInteractorOutputProtocol? { get set }
     var localDatamanager: ListLocationLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: ListLocationRemoteDataManagerInputProtocol? { get set }
+    
+    func saveObject(object: LocationModelRealm)
+    func reloadDBLocations()
 }
 
 protocol ListLocationDataManagerInputProtocol: AnyObject {
@@ -62,4 +68,6 @@ protocol ListLocationRemoteDataManagerOutputProtocol: AnyObject {
 
 protocol ListLocationLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
+    var interactor: ListLocationInteractorInputProtocol? { get set }
+    func setObjectFavourite(object: LocationModelRealm)
 }

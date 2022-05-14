@@ -22,6 +22,7 @@ class MoreMenuWireFrame: MoreMenuWireFrameProtocol {
     
     func goToListLocationView() {
         let vc = ListLocationWireFrame().view
+        vc.modalPresentationStyle = .overFullScreen
         view.present(vc, animated: true)
     }
 }

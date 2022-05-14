@@ -15,6 +15,7 @@ class ListLocationView: UIViewController {
     // MARK: Elements UI
     let mapView = MKMapView()
     let listLocations = UITableView()
+    var closeButton = UIButton()
 
     // MARK: Properties
     var presenter: ListLocationPresenterProtocol?
@@ -25,6 +26,10 @@ class ListLocationView: UIViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad()
     }
+    
+    @objc func closeView(){
+        dismiss(animated: true)
+    }
 }
 
 extension ListLocationView: ListLocationViewProtocol {
@@ -32,6 +37,7 @@ extension ListLocationView: ListLocationViewProtocol {
     func configureUI() {
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
+        view.backgroundColor = .white
         // Configure Map
         mapView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 18)
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,8 +48,18 @@ extension ListLocationView: ListLocationViewProtocol {
         listLocations.register(LocationTableViewCell.self, forCellReuseIdentifier: LocationTableViewCell.identifier)
         listLocations.translatesAutoresizingMaskIntoConstraints = false
         
+        // Configure close button
+        closeButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        closeButton.setImage(UIImage(systemName: "multiply"), for: .normal)
+        closeButton.backgroundColor = .white
+        closeButton.tintColor = .black
+        closeButton.layer.cornerRadius = closeButton.bounds.width / 2
+        closeButton.addTarget(self, action: #selector(closeView), for: .touchUpInside)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        
         view.addSubview(mapView)
         view.addSubview(listLocations)
+        view.addSubview(closeButton)
         NSLayoutConstraint.activate([
             // Constrains MapView
             mapView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -55,8 +71,18 @@ extension ListLocationView: ListLocationViewProtocol {
             listLocations.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             listLocations.widthAnchor.constraint(equalToConstant: width),
             listLocations.heightAnchor.constraint(equalToConstant: height / 2),
-            listLocations.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            listLocations.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            //Constrains Button
+            closeButton.widthAnchor.constraint(equalToConstant: 40),
+            closeButton.heightAnchor.constraint(equalToConstant: 40),
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15)
         ])
+    }
+    
+    func reloadTable() {
+        listLocations.reloadData()
     }
 }
 
@@ -69,6 +95,7 @@ extension ListLocationView: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: LocationTableViewCell.identifier, for: indexPath) as? LocationTableViewCell else { return UITableViewCell() }
         guard let data = presenter?.getDataBaseLocations()[indexPath.row] else { return UITableViewCell() }
         cell.configureCell(data: data)
+        cell.delegate = self
         return cell
     }
     
@@ -80,5 +107,12 @@ extension ListLocationView: UITableViewDelegate, UITableViewDataSource {
                                                        longitude: Double(data.latitude) ?? .zero)
         self.mapView.addAnnotation(annotation)
         mapView.centerToLocation(latitude: Double(data.latitude) ?? .zero, longitude: Double(data.latitude) ?? .zero)
+    }
+}
+
+extension ListLocationView: LocationTableViewCellDelegate {
+    func saveAndDeleteFavourite(selected: LocationModelRealm?) {
+        guard let selected = selected else { return }
+        presenter?.markFavourite(object: selected)
     }
 }

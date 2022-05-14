@@ -4,6 +4,9 @@
 //
 //  Created by Gustavo on 13/05/22.
 //
+protocol LocationTableViewCellDelegate: AnyObject {
+    func saveAndDeleteFavourite(selected: LocationModelRealm?)
+}
 
 import UIKit
 
@@ -11,7 +14,9 @@ class LocationTableViewCell: UITableViewCell {
     
     let location = UILabel()
     let date = UILabel()
-    let markFavourite = UIImageView()
+    let markFavourite = UIButton()
+    var object: LocationModelRealm?
+    weak var delegate: LocationTableViewCellDelegate?
 
     static let identifier = "LocationTableViewCell"
     
@@ -24,8 +29,13 @@ class LocationTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func selectedFavourite(){
+        delegate?.saveAndDeleteFavourite(selected: object)
+    }
+    
     func configureUI(){
-        markFavourite.image = UIImage(systemName: "heart.fill")
+        markFavourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        markFavourite.addTarget(self, action: #selector(selectedFavourite), for: .touchUpInside)
         location.textAlignment = .left
         date.textAlignment = .left
         location.translatesAutoresizingMaskIntoConstraints = false
@@ -50,6 +60,7 @@ class LocationTableViewCell: UITableViewCell {
     }
     
     func configureCell(data: LocationModelRealm){
+        object = data
         location.text = data.location
         date.text = data.date
         markFavourite.tintColor = data.isFavourite ? .red : .gray

@@ -27,6 +27,14 @@ extension ListLocationPresenter: ListLocationPresenterProtocol {
         let locations = try! Realm().objects(LocationModelRealm.self)
         return locations
     }
+    
+    func markFavourite(object: LocationModelRealm) {
+        interactor?.saveObject(object: object)
+    }
+    
+    func reloadTableLocations() {
+        view?.reloadTable()
+    }
 }
 
 extension ListLocationPresenter: ListLocationInteractorOutputProtocol {

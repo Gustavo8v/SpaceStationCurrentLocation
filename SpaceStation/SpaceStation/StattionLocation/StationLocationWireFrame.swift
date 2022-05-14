@@ -37,4 +37,9 @@ class StationLocationWireFrame: StationLocationWireFrameProtocol {
         vc.modalPresentationStyle = .overFullScreen
         view.present(vc, animated: true)
     }
+    
+    func goFavouritesView() {
+        let vc = FavoutiteLocationsWireFrame().view
+        view.navigationController?.pushViewController(vc, animated: true)
+    }
 }

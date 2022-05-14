@@ -8,6 +8,7 @@
 protocol MoreMenuViewDelegate: AnyObject {
     func updateLocation()
     func deleteAllRegisters()
+    func goToFavourites()
 }
 
 import Foundation
@@ -113,7 +114,9 @@ extension MoreMenuView: UITableViewDelegate, UITableViewDataSource {
                 self.delegate?.deleteAllRegisters()
             }
         case .favourites:
-            print("favourires")
+            dismiss(animated: true) {
+                self.delegate?.goToFavourites()
+            }
         case .updateLocation:
             dismiss(animated: true) {
                 self.delegate?.updateLocation()

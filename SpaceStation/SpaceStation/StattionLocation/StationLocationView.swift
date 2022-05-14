@@ -106,4 +106,8 @@ extension StationLocationView: MoreMenuViewDelegate {
     func deleteAllRegisters() {
         presenter?.deleteAllRegisters()
     }
+    
+    func goToFavourites() {
+        presenter?.goToFavourites()
+    }
 }
